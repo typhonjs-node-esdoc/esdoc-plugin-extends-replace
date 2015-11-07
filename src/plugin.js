@@ -23,6 +23,7 @@
  * Please refer to this repo that is using this plugin to generate end to end documentation:
  * https://github.com/typhonjs/backbone-parse-es6-demo
  *
+ * ```
  * This is the esdoc.json configuration file for the above repo:
  * {
  *    "title": "backbone-parse-es6-demo",
@@ -51,6 +52,7 @@
  *       }
  *    ]
  * }
+ *```
  *
  * In the `option.replace` object hash the left hand is a text string to search for in `extends` tags available for
  * modification in `onHandleTag`. Presently it's just a bare string checked by `indexOf`. In the future it may be
