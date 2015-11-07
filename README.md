@@ -8,7 +8,7 @@
 [![Coverage](https://img.shields.io/codecov/c/github/codecov/example-python.svg)](https://codecov.io/github/typhonjs/esdoc-plugin-extends-replace)
 [![Dependency Status](https://www.versioneye.com/user/projects/563d84c14d415e0018000087/badge.svg?style=flat)](https://www.versioneye.com/user/projects/563d84c14d415e0018000087)
 
-Provides support for replacing an ES6 classes extends target which is useful for
+A plugin for [ESDoc](https://esdoc.org) that enables end to end Javascript ES6 documentation providing support for replacing ES6 classes `extends` target which is useful for
 architectures where the target is indirectly imported. An example architecture is [backbone-es6](https://github.com/typhonjs/backbone-es6) where the main access point is a composed class, `Backbone`. In this case developers import Backbone as such:
 
 ```
