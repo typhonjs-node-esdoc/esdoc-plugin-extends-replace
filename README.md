@@ -5,7 +5,7 @@
 [![License](https://img.shields.io/badge/license-MIT-yellowgreen.svg?style=flat)](https://github.com/typhonjs/esdoc-plugin-extends-replace/blob/master/LICENSE)
 
 [![Build Status](https://travis-ci.org/typhonjs/esdoc-plugin-extends-replace.svg)](https://travis-ci.org/typhonjs/esdoc-plugin-extends-replace)
-[![Coverage](https://img.shields.io/codecov/c/github/codecov/example-python.svg)](https://codecov.io/github/typhonjs/esdoc-plugin-extends-replace)
+[![Coverage](https://img.shields.io/codecov/c/github/typhonjs/esdoc-plugin-extends-replace.svg)](https://codecov.io/github/typhonjs/esdoc-plugin-extends-replace)
 [![Dependency Status](https://www.versioneye.com/user/projects/563d84c14d415e0018000087/badge.svg?style=flat)](https://www.versioneye.com/user/projects/563d84c14d415e0018000087)
 
 A plugin for [ESDoc](https://esdoc.org) that enables end to end Javascript ES6 documentation providing support for replacing ES6 classes `extends` target which is useful for
