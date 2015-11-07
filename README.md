@@ -1,11 +1,11 @@
-![esdoc-plugin-extends-replace](http://i.imgur.com/1TsbnX2.png)
+![esdoc-plugin-extends-replace](http://i.imgur.com/TSNfjDX.png)
 
 [![NPM](https://img.shields.io/npm/v/esdoc-plugin-extends-replace.svg?label=npm)](https://www.npmjs.com/package/esdoc-plugin-extends-replace)
 [![Code Style](https://img.shields.io/badge/code%20style-allman-yellowgreen.svg?style=flat)](https://en.wikipedia.org/wiki/Indent_style#Allman_style)
 [![License](https://img.shields.io/badge/license-MIT-yellowgreen.svg?style=flat)](https://github.com/typhonjs/esdoc-plugin-extends-replace/blob/master/LICENSE)
 
 [![Build Status](https://travis-ci.org/typhonjs/esdoc-plugin-extends-replace.svg)](https://travis-ci.org/typhonjs/esdoc-plugin-extends-replace)
-[![Build Status](https://img.shields.io/codecov/c/github/codecov/example-python.svg)](https://codecov.io/github/typhonjs/esdoc-plugin-extends-replace)
+[![Coverage](https://img.shields.io/codecov/c/github/codecov/example-python.svg)](https://codecov.io/github/typhonjs/esdoc-plugin-extends-replace)
 [![Dependency Status](https://www.versioneye.com/user/projects/563d84c14d415e0018000087/badge.svg?style=flat)](https://www.versioneye.com/user/projects/563d84c14d415e0018000087)
 
 Provides support for replacing an ES6 classes extends target which is useful for
