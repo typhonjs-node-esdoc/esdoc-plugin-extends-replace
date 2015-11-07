@@ -1,0 +1,6 @@
+.idea
+.DS_Store
+npm-debug.log
+node_modules
+jspm_packages
+test/fixture/docs
