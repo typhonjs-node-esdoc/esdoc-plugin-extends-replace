@@ -2,7 +2,7 @@
   "name": "esdoc-plugin-extends-replace",
   "version": "0.0.1",
   "homepage": "https://github.com/typhonjs/esdoc-plugin-extends-replace/",
-  "description": "A plugin for ESDoc making it SystemJS / JSPM aware.",
+  "description": "An ESDoc plugin to replace unconnected `extends` tags w/ actual class references.",
   "license": "MIT",
   "author": {
     "name": "Mike Leahy"
