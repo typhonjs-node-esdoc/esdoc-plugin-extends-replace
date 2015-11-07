@@ -1,6 +1,6 @@
 {
   "name": "esdoc-plugin-extends-replace",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "homepage": "https://github.com/typhonjs/esdoc-plugin-extends-replace/",
   "description": "An ESDoc plugin to replace unconnected `extends` tags w/ actual class references.",
   "license": "MIT",
@@ -21,14 +21,14 @@
   "devDependencies": {
     "codecov.io": "^0.1.6",
     "esdoc": "^0.4.3",
-    "esdoc-plugin-jspm": "^0.3.0",
+    "esdoc-plugin-jspm": "^0.3.1",
     "fs-extra": "^0.26.0",
     "gulp": "^3.9.0",
     "istanbul": "^0.4.0",
     "mocha": "^2.3.3",
     "power-assert": "^1.1.0",
     "typhonjs-config-eslint": "^0.2.0",
-    "typhonjs-core-gulptasks": "^0.1.1"
+    "typhonjs-core-gulptasks": "^0.2.0"
   },
   "scripts": {
     "test": "node ./script/test.js"
