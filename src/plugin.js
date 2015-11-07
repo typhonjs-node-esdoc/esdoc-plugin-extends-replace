@@ -40,12 +40,12 @@
  *          {
  *             "replace":
  *             {
- *                "Backbone.Collection": "ParseCollection",
- *                "Backbone.Events": "Events",
- *                "Backbone.History": "History",
- *                "Backbone.Model": "ParseModel",
- *                "Backbone.Router": "Router",
- *                "Backbone.View": "View"
+ *                "Backbone.Collection": "backbone-parse-es6@master/src/ParseCollection",
+ *                "Backbone.Events": "backbone-es6@master/src/Events",
+ *                "Backbone.History": "backbone-es6@master/src/History",
+ *                "Backbone.Model": "backbone-parse-es6@master/src/ParseModel",
+ *                "Backbone.Router": "backbone-es6@master/src/Router",
+ *                "Backbone.View": "backbone-es6@master/src/View"
  *             }
  *          }
  *       }
@@ -54,13 +54,15 @@
  *
  * In the `option.replace` object hash the left hand is a text string to search for in `extends` tags available for
  * modification in `onHandleTag`. Presently it's just a bare string checked by `indexOf`. In the future it may be
- * upgraded to regex matching. On the right hand side is the name of the class to replace matched extend targets.
- * In `onHandleTag` all tags are first processed storing the `longname` tag for the class name in question. Then a
- * second pass is made replacing any classes `extends` tags that match the left hand side with the `longname` of the
- * class found on the right hand side.
+ * upgraded to regex matching. On the right hand side is the partial path & name of the class to replace matched extend
+ * targets. In `onHandleTag` all tags are first processed storing the `longname` tag for the class path in question.
+ * Then a second pass is made replacing any classes `extends` tags that match the left hand side with the `longname` of
+ * the class found on the right hand side.
  *
- * Of course it should be noted that currently the parsing is very basic and there will be clashes if one duplicates
- * class names.
+ * Of course it should be noted that currently the parsing is very basic and there will be clashes if one uses just
+ * the class name. It's recommended to use a partial path including the JSPM module name as shown above. Please take
+ * note of the semver / version number or `@master` for a dependency pulling directly from the master branch of
+ * a repository.
  */
 
 var option;
@@ -91,17 +93,20 @@ exports.onStart = function(ev)
  */
 exports.onHandleTag = function(ev)
 {
-   // Perform first pass through all tags matching the name of a class with the `option.replace` right
-   // hand side / class name.
+   // Perform first pass through all tags matching the `longname` of a class with the `option.replace` right
+   // hand side / class path & name partial.
    for (var cntr = 0; cntr < ev.data.tag.length; cntr++)
    {
       var tag = ev.data.tag[cntr];
 
-      if (tag.kind && tag.name && tag.longname && tag.kind === 'class')
+      if (tag.kind && tag.longname && tag.kind === 'class')
       {
-         if (typeof reverseLookup[tag.name] === 'string')
+         for (var classpath in reverseLookup)
          {
-            reverseLookup[tag.name] = tag.longname;
+            if (tag.longname.indexOf(classpath) >= 0)
+            {
+               reverseLookup[classpath] = tag.longname;
+            }
          }
       }
    }

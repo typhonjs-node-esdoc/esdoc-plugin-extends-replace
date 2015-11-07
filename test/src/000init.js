@@ -32,12 +32,12 @@ var config = {
          {
             "replace":
             {
-               "Backbone.Collection": "Collection",
-               "Backbone.Events": "Events",
-               "Backbone.History": "History",
-               "Backbone.Model": "Model",
-               "Backbone.Router": "Router",
-               "Backbone.View": "View"
+               "Backbone.Collection": "backbone-es6@master/src/Collection.js",
+               "Backbone.Events": "backbone-es6@master/src/Events.js",
+               "Backbone.History": "backbone-es6@master/src/History.js",
+               "Backbone.Model": "backbone-es6@master/src/Model.js",
+               "Backbone.Router": "backbone-es6@master/src/Router.js",
+               "Backbone.View": "backbone-es6@master/src/View.js"
             }
          }
       }
