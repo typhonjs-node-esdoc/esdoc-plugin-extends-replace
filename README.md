@@ -123,3 +123,11 @@ gulp.task('docs', function()
    return gulp.src(esdocConfig.source).pipe(esdoc(esdocConfig));
 });
 ```
+
+To suggest a feature or report a bug: https://github.com/typhonjs/esdoc-plugin-extends-replace/issues
+
+Many thanks to the ESDoc community for creating a valuable documentation tool. 
+
+esdoc-plugin-extends-replace (c) 2015-present Michael Leahy, TyphonRT Inc.
+
+esdoc-plugin-extends-replace may be freely distributed under the MIT license.
