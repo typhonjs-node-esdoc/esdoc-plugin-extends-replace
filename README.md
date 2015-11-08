@@ -22,7 +22,7 @@ to link `Backbone.View` to the actual implementing class / file in the bare sour
 `<ProjectRootPath>/jspm_packages/github/typhonjs/backbone-es6@master/src/View.js`.
 
 Latest Changes:
-- 0.2.0: All matching parameters are treated as a regex string turned into a RegExp instance for pattern matching. Bare strings will still work, but consider using regex patterns for better matching.
+- 0.2.0: All matching parameters are treated as a regex string turned into a RegExp instance for pattern matching. Bare strings will still work, but consider using regex patterns for better matching. A `silent` option is also available to silence all logging output.
 
 Installation steps:
 - Install `esdoc` or `gulp-esdoc` in `devDependencies` in `package.json`.
