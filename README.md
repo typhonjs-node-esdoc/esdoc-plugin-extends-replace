@@ -62,7 +62,7 @@ This is the esdoc.json configuration file for the above repo:
             "replace":
             {
                "backbone~[B|b]ackbone\\.Collection": "backbone-parse-es6@[\\s\\S]+\/src\/ParseCollection",
-               "backbone~[B|b]ackbone\\.Events": "backbone-es6@[\\s\\S]+\/src\/Events",
+               "backbone~[B|b]ackbone\\.Events": "typhonjs-core-backbone-events@[\\s\\S]+\/src\/Events",
                "backbone~[B|b]ackbone\\.History": "backbone-es6@[\\s\\S]+\/src\/History",
                "backbone~[B|b]ackbone\\.Model": "backbone-parse-es6@[\\s\\S]+\/src\/ParseModel",
                "backbone~[B|b]ackbone\\.Router": "backbone-es6@[\\s\\S]+\/src\/Router",
