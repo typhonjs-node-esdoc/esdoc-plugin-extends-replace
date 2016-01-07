@@ -21,7 +21,7 @@ ESDoc has no visibility into the composed Backbone instance which occurs at runt
 to link `Backbone.View` to the actual implementing class / file in the bare source code which is parsed by ESDoc. In this example case JSPM / SystemJS is used to manage the backbone-es6 dependency. To support end to end documentation it's necessary to replace `Backbone.View` with
 `<ProjectRootPath>/jspm_packages/github/typhonjs/backbone-es6@master/src/View.js`.
 
-Latest Changes:
+Latest significant changes:
 - 0.2.0: All matching parameters are treated as a regex string turned into a RegExp instance for pattern matching. Bare strings will still work, but consider using regex patterns for better matching. A `silent` option is also available to silence all logging output.
 
 Installation steps:
