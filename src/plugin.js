@@ -21,12 +21,12 @@
  * `esdoc-plugin-jspm`.
  *
  * Please refer to this repo that is using this plugin to generate end to end documentation:
- * https://github.com/typhonjs/backbone-parse-es6-demo
+ * https://github.com/typhonjs-demos/backbone-parse-es6-todos
  *
  * ```
  * This is the esdoc.json configuration file for the above repo:
  * {
- *    "title": "backbone-parse-es6-demo",
+ *    "title": "backbone-parse-es6-todos",
  *    "source": "src",
  *    "destination": "docs",
  *    "plugins":
@@ -43,7 +43,7 @@
  *             "replace":
  *             {
  *                "backbone~[B|b]ackbone\\.Collection": "backbone-parse-es6@[\\s\\S]+\/src\/ParseCollection",
- *                "backbone~[B|b]ackbone\\.Events": "backbone-es6@[\\s\\S]+\/src\/Events",
+ *                "backbone~[B|b]ackbone\\.Events": "typhonjs-core-backbone-events@[\\s\\S]+\/src\/Events",
  *                "backbone~[B|b]ackbone\\.History": "backbone-es6@[\\s\\S]+\/src\/History",
  *                "backbone~[B|b]ackbone\\.Model": "backbone-parse-es6@[\\s\\S]+\/src\/ParseModel",
  *                "backbone~[B|b]ackbone\\.Router": "backbone-es6@[\\s\\S]+\/src\/Router",
