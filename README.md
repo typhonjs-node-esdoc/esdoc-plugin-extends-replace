@@ -36,18 +36,19 @@ For more information view the [ESDoc tutorial](https://esdoc.org/tutorial.html) 
 As an alternate and the preferred all inclusive installation process please see [typhonjs-core-gulptasks](https://www.npmjs.com/package/typhonjs-core-gulptasks) for a NPM package which contains several pre-defined Gulp tasks for working with JSPM / SystemJS, ESLint and ESDoc generation with all available plugins including [esdoc-plugin-jspm](https://www.npmjs.com/package/esdoc-plugin-jspm), [esdoc-plugin-extends-replace](https://www.npmjs.com/package/esdoc-plugin-extends-replace), [esdoc-importpath-plugin](https://www.npmjs.com/package/esdoc-importpath-plugin]) & [esdoc-es7-plugin](https://www.npmjs.com/package/esdoc-es7-plugin) support.
 
 `esdoc-plugin-extends-replace` can be used independently of JSPM / SystemJS, but the sample below from
-`backbone-parse-es6-demo` shows the `esdoc.json` file that uses `esdoc-plugin-extends-replace` and
+`backbone-parse-es6-todos` shows the `esdoc.json` file that uses `esdoc-plugin-extends-replace` and
 [esdoc-plugin-jspm](https://www.npmjs.com/package/esdoc-plugin-jspm).
 
 Please refer to this repo that is using this plugin to generate end to end documentation:
-https://github.com/typhonjs/backbone-parse-es6-demo
+https://github.com/typhonjs-demos/backbone-parse-es6-todos
 
 ```
 This is the esdoc.json configuration file for the above repo:
 {
-   "title": "backbone-parse-es6-demo",
-   "source": "src",
+   "title": "backbone-parse-es6-todos",
+   "source": "site",
    "destination": "docs",
+   "excludes": ["^(?:(?!\\.js$).)*$"],
    "plugins":
    [
       {
@@ -58,7 +59,6 @@ This is the esdoc.json configuration file for the above repo:
          "name": "esdoc-plugin-extends-replace",
          "option":
          {
-            "silent": false,  // (Optional) if true then there is no logging output from the plugin.
             "replace":
             {
                "backbone~[B|b]ackbone\\.Collection": "backbone-parse-es6@[\\s\\S]+\/src\/ParseCollection",
@@ -70,7 +70,15 @@ This is the esdoc.json configuration file for the above repo:
             }
          }
       }
-   ]
+   ],
+   "manual":
+   {
+      "overview": ["./manual/overview.md"],
+      "installation": ["./manual/installation.md"],
+      "tutorial": ["./manual/tutorial.md"],
+      "faq": ["./manual/faq.md"],
+      "changelog": ["./CHANGELOG.md"]
+   }
 }
 ```
 
@@ -91,11 +99,11 @@ If installing and working directly with `esdoc-plugin-extends-replace` the follo
   ...
 
   "devDependencies": {
-    "esdoc-plugin-extends-replace": "^0.2.0",
-    "esdoc-plugin-jspm": "^0.4.0",
-    "jspm": "^0.16.14",
+    "esdoc-plugin-extends-replace": "^0.2.1",
+    "esdoc-plugin-jspm": "^0.4.1",
+    "jspm": "^0.16.19",
     "gulp": "^3.9.0",
-    "gulp-esdoc": "^0.1.0",
+    "gulp-esdoc": "^0.2.0",
   },
   
   "jspm": {
