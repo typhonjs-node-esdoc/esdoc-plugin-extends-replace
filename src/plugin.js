@@ -160,7 +160,8 @@ exports.onHandleTag = function(ev)
                      if (!silent)
                      {
                         console.log("esdoc-plugin-extends-replace - Warning: aborting, regex '" + forwardLookup[key]
-                         + "' matched '" + extendsTag + "' but there is no linked class path data.'");
+                         + "' matched '" + extendsTag + "' in '" + tag.importPath +
+                          "' but there is no linked class path data.'");
                      }
                   }
                   else
@@ -169,8 +170,8 @@ exports.onHandleTag = function(ev)
 
                      if (!silent)
                      {
-                        console.log("esdoc-plugin-extends-replace - Info: replaced '" + extendsTag + "' to '"
-                         + classData[key] + "'");
+                        console.log("esdoc-plugin-extends-replace - Info: replaced '" + extendsTag + "' in '"
+                         + tag.importPath + "'.");
                      }
                   }
                }
