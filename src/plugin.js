@@ -160,8 +160,8 @@ exports.onHandleTag = function(ev)
                      if (!silent)
                      {
                         console.log("esdoc-plugin-extends-replace - Warning: aborting, regex '" + forwardLookup[key]
-                         + "' matched '" + extendsTag + "' in '" + tag.importPath +
-                          "' but there is no linked class path data.'");
+                         + "' matched '" + extendsTag + "' in '" + tag.importPath
+                          + "' but there is no linked class path data.'");
                      }
                   }
                   else
