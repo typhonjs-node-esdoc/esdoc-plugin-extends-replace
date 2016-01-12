@@ -1,5 +1,5 @@
-## 0.4.0 (2016-01-12)
-- No new features. NPM publish error. Stable version release coordinated with `typhonjs-core-gulptasks@0.5.0`
+## 0.3.1 (2016-01-12)
+- No new features. NPM publish error. 
  
 ## 0.3.0 (2016-01-11)
 - No new features. Stable version release coordinated with `typhonjs-core-gulptasks@0.4.0`
