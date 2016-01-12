@@ -1,3 +1,6 @@
+## 0.3.0 (2016-01-11)
+- No new features. Stable version release coordinated with `typhonjs-core-gulptasks@0.4.0`
+
 ## 0.2.2 (2016-01-11)
 - Better log messages indicating the target class where extends replacement occurs.
 
