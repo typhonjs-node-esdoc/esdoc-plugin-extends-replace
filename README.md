@@ -99,7 +99,7 @@ If installing and working directly with `esdoc-plugin-extends-replace` the follo
   ...
 
   "devDependencies": {
-    "esdoc-plugin-extends-replace": "^0.4.0",
+    "esdoc-plugin-extends-replace": "^0.3.1",
     "esdoc-plugin-jspm": "^0.5.0",
     "jspm": "^0.16.21",
     "gulp": "^3.9.0",
