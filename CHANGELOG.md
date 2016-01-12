@@ -1,3 +1,6 @@
+## 0.2.2 (2016-01-11)
+- Better log messages indicating the target class where extends replacement occurs.
+
 ## 0.2.1 (2016-01-06)
 - Updated README.md for accuracy.
 
