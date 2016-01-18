@@ -24,7 +24,7 @@
     "esdoc-plugin-jspm": "^0.5.0",
     "fs-extra": "^0.26.0",
     "gulp": "^3.9.0",
-    "istanbul": "^0.4.1",
+    "istanbul": "^0.4.2",
     "jspm": "^0.16.23",
     "mocha": "^2.3.4",
     "power-assert": "^1.2.0",
