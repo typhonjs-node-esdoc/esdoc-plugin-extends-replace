@@ -1,5 +1,5 @@
 /**
- * 000Init -- Bootstraps the testing process by generating the documentation linking the backbone JSPM package
+ * 000Init -- Bootstraps the testing process by generating the documentation linking the backbone shim
  * with a simple local files: TestCollection, TestEvents, TestHistory, TestRouter, & TestView. Any previous coverage
  * (./coverage) and docs (./test/fixture/docs) are deleted before docs are generated.
  *
@@ -10,34 +10,24 @@ var path       = require('path');
 var ESDoc      = require('../../node_modules/esdoc/out/src/ESDoc.js');
 var publisher  = require('../../node_modules/esdoc/out/src/Publisher/publish.js');
 
-// Find the root path where JSPM config.js is located.
-var rootPath = __dirname.split(path.sep);
-rootPath.pop();
-rootPath.pop();
-rootPath = rootPath.join(path.sep);
-
+// Note that we are cheating here and using a shim for Backbone (BackboneShim.js) to avoid depending on JSPM.
 var config = {
    source: './test/fixture',
    destination: './test/fixture/docs',
-   jspmRootPath: rootPath,
    "plugins":
    [
-      {
-         "name": "esdoc-plugin-jspm"
-      },
-
       {
          "name": "./src/plugin.js",
          "option":
          {
             "replace":
             {
-               "Backbone.Collection": "backbone-es6@master/src/Collection.js",
-               "Backbone.Events": "typhonjs-core-backbone-events@master/src/Events.js",
-               "Backbone.History": "backbone-es6@master/src/History.js",
-               "Backbone.Model": "backbone-es6@master/src/Model.js",
-               "Backbone.Router": "backbone-es6@master/src/Router.js",
-               "Backbone.View": "backbone-es6@master/src/View.js"
+               "Backbone.Collection": "fixture/BackboneShim.js~Collection",
+               "Backbone.Events": "fixture/BackboneShim.js~Events",
+               "Backbone.History": "fixture/BackboneShim.js~History",
+               "Backbone.Model": "fixture/BackboneShim.js~Model",
+               "Backbone.Router": "fixture/BackboneShim.js~Router",
+               "Backbone.View": "fixture/BackboneShim.js~View"
             }
          }
       }
