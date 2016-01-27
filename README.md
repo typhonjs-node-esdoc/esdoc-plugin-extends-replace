@@ -21,8 +21,7 @@ ESDoc has no visibility into the composed Backbone instance which occurs at runt
 to link `Backbone.View` to the actual implementing class / file in the bare source code which is parsed by ESDoc. In this example case JSPM / SystemJS is used to manage the backbone-es6 dependency. To support end to end documentation it's necessary to replace `Backbone.View` with
 `<ProjectRootPath>/jspm_packages/github/typhonjs/backbone-es6@master/src/View.js`.
 
-Latest significant changes:
-- 0.2.0: All matching parameters are treated as a regex string turned into a RegExp instance for pattern matching. Bare strings will still work, but consider using regex patterns for better matching. A `silent` option is also available to silence all logging output.
+For the latest significant changes please see the [CHANGELOG](https://github.com/typhonjs/esdoc-plugin-extends-replace/blob/master/CHANGELOG.md).
 
 Installation steps:
 - Install `esdoc` or `gulp-esdoc` in `devDependencies` in `package.json`.
@@ -99,9 +98,9 @@ If installing and working directly with `esdoc-plugin-extends-replace` the follo
   ...
 
   "devDependencies": {
-    "esdoc-plugin-extends-replace": "^0.3.1",
-    "esdoc-plugin-jspm": "^0.5.0",
-    "jspm": "^0.16.21",
+    "esdoc-plugin-extends-replace": "^0.4.0",
+    "esdoc-plugin-jspm": "^0.6.0",
+    "jspm": "^0.16.25",
     "gulp": "^3.9.0",
     "gulp-esdoc": "^0.2.0",
   },
