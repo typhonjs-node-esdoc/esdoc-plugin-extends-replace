@@ -1,3 +1,6 @@
+## 0.4.0 (2016-01-27)
+- No new features. Removed dependence on `typhonjs-core-gulptasks` and JSPM for testing.
+
 ## 0.3.1 (2016-01-12)
 - No new features. NPM publish error. 
  
