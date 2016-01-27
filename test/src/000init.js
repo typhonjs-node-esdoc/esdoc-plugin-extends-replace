@@ -6,7 +6,6 @@
  * @type {fse|exports|module.exports}
  */
 var fs         = require('fs-extra');
-var path       = require('path');
 var ESDoc      = require('../../node_modules/esdoc/out/src/ESDoc.js');
 var publisher  = require('../../node_modules/esdoc/out/src/Publisher/publish.js');
 
