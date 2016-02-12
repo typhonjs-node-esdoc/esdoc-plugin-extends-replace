@@ -3,6 +3,7 @@
 [![NPM](https://img.shields.io/npm/v/esdoc-plugin-extends-replace.svg?label=npm)](https://www.npmjs.com/package/esdoc-plugin-extends-replace)
 [![Code Style](https://img.shields.io/badge/code%20style-allman-yellowgreen.svg?style=flat)](https://en.wikipedia.org/wiki/Indent_style#Allman_style)
 [![License](https://img.shields.io/badge/license-MIT-yellowgreen.svg?style=flat)](https://github.com/typhonjs/esdoc-plugin-extends-replace/blob/master/LICENSE)
+[![Gitter](https://img.shields.io/gitter/room/typhonjs/TyphonJS.svg)](https://gitter.im/typhonjs/TyphonJS)
 
 [![Build Status](https://travis-ci.org/typhonjs/esdoc-plugin-extends-replace.svg)](https://travis-ci.org/typhonjs/esdoc-plugin-extends-replace)
 [![Coverage](https://img.shields.io/codecov/c/github/typhonjs/esdoc-plugin-extends-replace.svg)](https://codecov.io/github/typhonjs/esdoc-plugin-extends-replace)
