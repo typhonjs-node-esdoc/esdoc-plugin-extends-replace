@@ -2,12 +2,12 @@
 
 [![NPM](https://img.shields.io/npm/v/esdoc-plugin-extends-replace.svg?label=npm)](https://www.npmjs.com/package/esdoc-plugin-extends-replace)
 [![Code Style](https://img.shields.io/badge/code%20style-allman-yellowgreen.svg?style=flat)](https://en.wikipedia.org/wiki/Indent_style#Allman_style)
-[![License](https://img.shields.io/badge/license-MIT-yellowgreen.svg?style=flat)](https://github.com/typhonjs/esdoc-plugin-extends-replace/blob/master/LICENSE)
+[![License](https://img.shields.io/badge/license-MPLv2-yellowgreen.svg?style=flat)](https://github.com/typhonjs-node-esdoc/esdoc-plugin-extends-replace/blob/master/LICENSE)
 [![Gitter](https://img.shields.io/gitter/room/typhonjs/TyphonJS.svg)](https://gitter.im/typhonjs/TyphonJS)
 
-[![Build Status](https://travis-ci.org/typhonjs/esdoc-plugin-extends-replace.svg)](https://travis-ci.org/typhonjs/esdoc-plugin-extends-replace)
-[![Coverage](https://img.shields.io/codecov/c/github/typhonjs/esdoc-plugin-extends-replace.svg)](https://codecov.io/github/typhonjs/esdoc-plugin-extends-replace)
-[![Dependency Status](https://www.versioneye.com/user/projects/563d84c14d415e0018000087/badge.svg?style=flat)](https://www.versioneye.com/user/projects/563d84c14d415e0018000087)
+[![Build Status](https://travis-ci.org/typhonjs-node-esdoc/esdoc-plugin-extends-replace.svg?branch=master)](https://travis-ci.org/typhonjs-node-esdoc/esdoc-plugin-extends-replace)
+[![Coverage](https://img.shields.io/codecov/c/github/typhonjs-node-esdoc/esdoc-plugin-extends-replace.svg)](https://codecov.io/github/typhonjs/esdoc-plugin-extends-replace)
+[![Dependency Status](https://www.versioneye.com/user/projects/56ddb7dc4839f7003882aaec/badge.svg?style=flat)](https://www.versioneye.com/user/projects/56ddb7dc4839f7003882aaec)
 
 A plugin for [ESDoc](https://esdoc.org) that enables end to end Javascript ES6 documentation providing support for replacing ES6 classes `extends` target which is useful for
 architectures where the target is indirectly imported. An example architecture is [backbone-es6](https://github.com/typhonjs/backbone-es6) where the main access point is a composed class, `Backbone`. In this case developers import Backbone as such:
@@ -99,7 +99,7 @@ If installing and working directly with `esdoc-plugin-extends-replace` the follo
   ...
 
   "devDependencies": {
-    "esdoc-plugin-extends-replace": "^0.4.0",
+    "esdoc-plugin-extends-replace": "^0.4.1",
     "esdoc-plugin-jspm": "^0.6.0",
     "jspm": "^0.16.25",
     "gulp": "^3.9.0",
@@ -144,4 +144,4 @@ Many thanks to the ESDoc community for creating a valuable documentation tool.
 
 esdoc-plugin-extends-replace (c) 2015-present Michael Leahy, TyphonRT Inc.
 
-esdoc-plugin-extends-replace may be freely distributed under the MIT license.
+esdoc-plugin-extends-replace may be freely distributed under the MPLv2.0 license.
