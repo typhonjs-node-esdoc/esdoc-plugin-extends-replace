@@ -1,3 +1,6 @@
+## 0.4.1 (2016-03-07)
+- No new features. Converted source to ES6.
+
 ## 0.4.0 (2016-01-27)
 - No new features. Removed dependence on `typhonjs-core-gulptasks` and JSPM for testing.
 

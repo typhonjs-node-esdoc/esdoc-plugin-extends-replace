@@ -1,4 +1,4 @@
-jspm_packages/
+coverage/
+dist/
 node_modules/
-test/fixture/
-config.js
+test/fixture/docs/

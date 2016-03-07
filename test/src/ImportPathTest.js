@@ -1,5 +1,5 @@
-var assert =   require('power-assert');
-var fs =       require('fs-extra');
+import { assert } from 'chai';
+import fs         from 'fs-extra';
 
 /**
  * This test confirms that the Backbone-ES6 JSPM package is properly linked with the local source. In this case
@@ -8,44 +8,40 @@ var fs =       require('fs-extra');
  *
  * @test {onHandleCode}
  */
-describe('Import Path', function()
+describe('Import Path', () =>
 {
-   it('TestCollection extends Backbone.Collection', function()
+   it('TestCollection extends Backbone.Collection', () =>
    {
-      var html = fs.readFileSync(
-       './test/fixture/docs/class/fixture/TestCollection.js~TestCollection.html').toString();
+      const html = fs.readFileSync('./test/fixture/docs/class/fixture/TestCollection.js~TestCollection.html', 'utf-8');
 
-      assert(html.indexOf('fixture/BackboneShim.js~Collection.html">Collection</a></span> &#x2192; TestCollection<') >= 0);
+      assert(html.indexOf('fixture/BackboneShim.js~Collection.html">Collection</a></span> &#x2192; TestCollection<')
+       >= 0);
    });
 
-   it('TestEvents extends Backbone.Events', function()
+   it('TestEvents extends Backbone.Events', () =>
    {
-      var html = fs.readFileSync(
-       './test/fixture/docs/class/fixture/TestEvents.js~TestEvents.html').toString();
+      const html = fs.readFileSync('./test/fixture/docs/class/fixture/TestEvents.js~TestEvents.html', 'utf-8');
 
       assert(html.indexOf('fixture/BackboneShim.js~Events.html">Events</a></span> &#x2192; TestEvents<') >= 0);
    });
 
-   it('TestHistory extends Backbone.History', function()
+   it('TestHistory extends Backbone.History', () =>
    {
-      var html = fs.readFileSync(
-       './test/fixture/docs/class/fixture/TestHistory.js~TestHistory.html').toString();
+      const html = fs.readFileSync('./test/fixture/docs/class/fixture/TestHistory.js~TestHistory.html', 'utf-8');
 
       assert(html.indexOf('fixture/BackboneShim.js~History.html">History</a></span> &#x2192; TestHistory<') >= 0);
    });
 
-   it('TestRouter extends Backbone.Router', function()
+   it('TestRouter extends Backbone.Router', () =>
    {
-      var html = fs.readFileSync(
-       './test/fixture/docs/class/fixture/TestRouter.js~TestRouter.html').toString();
+      const html = fs.readFileSync('./test/fixture/docs/class/fixture/TestRouter.js~TestRouter.html', 'utf-8');
 
       assert(html.indexOf('fixture/BackboneShim.js~Router.html">Router</a></span> &#x2192; TestRouter<') >= 0);
    });
 
-   it('TestView extends Backbone.View', function()
+   it('TestView extends Backbone.View', () =>
    {
-      var html = fs.readFileSync(
-       './test/fixture/docs/class/fixture/TestView.js~TestView.html').toString();
+      const html = fs.readFileSync('./test/fixture/docs/class/fixture/TestView.js~TestView.html', 'utf-8');
 
       assert(html.indexOf('fixture/BackboneShim.js~View.html">View</a></span> &#x2192; TestView<') >= 0);
    });

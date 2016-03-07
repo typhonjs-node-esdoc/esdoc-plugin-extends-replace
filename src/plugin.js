@@ -75,10 +75,10 @@
  * `import backbone from 'backbone';`
  */
 
-var forwardLookup = {};    // Stores forward lookup RegExp instances to match against `extends` statements.
-var reverseLookup = {};    // Stores reverse lookup RegExp instances to link against any class processed by ESDoc.
-var classData = {};        // Stores by left hand key string the linked classes resolved by the first pass lookup.
-var silent;                // Stores option that if true silences logging output.
+const forwardLookup = {};  // Stores forward lookup RegExp instances to match against `extends` statements.
+const reverseLookup = {};  // Stores reverse lookup RegExp instances to link against any class processed by ESDoc.
+const classData = {};      // Stores by left hand key string the linked classes resolved by the first pass lookup.
+let silent;                // Stores option that if true silences logging output.
 
 // ESDoc plugin callbacks -------------------------------------------------------------------------------------------
 
@@ -87,38 +87,38 @@ var silent;                // Stores option that if true silences logging output
  *
  * @param {object}   ev - Event from ESDoc containing data field.
  */
-exports.onStart = function(ev)
+export function onStart(ev)
 {
-   var option = ev.data.option || {};
+   const option = ev.data.option || {};
    option.replace = option.replace || {};
    silent = option.silent || false;
 
    // Create forward and reverse RegExp instances
-   for (var key in option.replace)
+   for (const key in option.replace)
    {
       forwardLookup[key] = new RegExp(key);
       reverseLookup[key] = new RegExp(option.replace[key]);
    }
-};
+}
 
 /**
  * Replaces class `extends` tag entries with the `longname` of classes found in a first pass.
  *
  * @param {object}   ev - Event from ESDoc containing data field
  */
-exports.onHandleTag = function(ev)
+export function onHandleTag(ev)
 {
    // Perform first pass through all tags matching the `longname` of a class with the `option.replace` right
    // hand side / class path & name partial.
-   for (var cntr = 0; cntr < ev.data.tag.length; cntr++)
+   for (let cntr = 0; cntr < ev.data.tag.length; cntr++)
    {
-      var tag = ev.data.tag[cntr];
+      const tag = ev.data.tag[cntr];
 
       // Only process tags where the kind is `class` that also have a longname.
       if (tag.kind && tag.longname && tag.kind === 'class')
       {
          // Iterate over all reverse lookup RegExp
-         for (var key in reverseLookup)
+         for (const key in reverseLookup)
          {
             // If a match is found store the tag.longname by left hand key string.
             if (reverseLookup[key].test(tag.longname))
@@ -127,8 +127,8 @@ exports.onHandleTag = function(ev)
 
                if (!silent)
                {
-                  console.log("esdoc-plugin-extends-replace - Info: linked '" + reverseLookup[key] + "' to '"
-                   + tag.longname + "'");
+                  console.log(`esdoc-plugin-extends-replace - Info: linked '${reverseLookup[key]}' to `
+                   + `'${tag.longname}'`);
                }
             }
          }
@@ -137,20 +137,20 @@ exports.onHandleTag = function(ev)
 
    // Perform a second pass through all tags replacing class `extends` entries that match the left hand side of
    // `option.replace` data with the `longname` of the class from the first pass above.
-   for (cntr = 0; cntr < ev.data.tag.length; cntr++)
+   for (let cntr = 0; cntr < ev.data.tag.length; cntr++)
    {
-      tag = ev.data.tag[cntr];
+      const tag = ev.data.tag[cntr];
 
       // Only process tags where the kind is `class` that also have an `extends` entry.
       if (tag.kind && tag.extends && tag.kind === 'class')
       {
          // Iterate through all extends entries.
-         for (var cntr2 = 0; cntr2 < tag.extends.length; cntr2++)
+         for (let cntr2 = 0; cntr2 < tag.extends.length; cntr2++)
          {
-            var extendsTag = tag.extends[cntr2];
+            const extendsTag = tag.extends[cntr2];
 
             // Iterate over all forward lookup RegExp.
-            for (key in forwardLookup)
+            for (const key in forwardLookup)
             {
                // If a match is found then replace the extends entry with the linked class path.
                if (forwardLookup[key].test(extendsTag))
@@ -159,9 +159,8 @@ exports.onHandleTag = function(ev)
                   {
                      if (!silent)
                      {
-                        console.log("esdoc-plugin-extends-replace - Warning: aborting, regex '" + forwardLookup[key]
-                         + "' matched '" + extendsTag + "' in '" + tag.importPath
-                          + "' but there is no linked class path data.'");
+                        console.log(`esdoc-plugin-extends-replace - Warning: aborting, regex '${forwardLookup[key]}' `
+                         + `matched '${extendsTag}' in '${tag.importPath}' but there is no linked class path data.`);
                      }
                   }
                   else
@@ -170,8 +169,8 @@ exports.onHandleTag = function(ev)
 
                      if (!silent)
                      {
-                        console.log("esdoc-plugin-extends-replace - Info: replaced '" + extendsTag + "' in '"
-                         + tag.importPath + "'.");
+                        console.log(`esdoc-plugin-extends-replace - Info: replaced '${extendsTag}' in `
+                         + `'${tag.importPath}'.`);
                      }
                   }
                }
@@ -179,4 +178,4 @@ exports.onHandleTag = function(ev)
          }
       }
    }
-};
+}

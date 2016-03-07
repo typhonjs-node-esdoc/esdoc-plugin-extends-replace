@@ -1,5 +1,3 @@
-/* eslint-disable */
-
 import Backbone from './BackboneShim.js';
 
 /**
