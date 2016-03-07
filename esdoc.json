@@ -1,0 +1,6 @@
+{
+   "title": "esdoc-plugin-extends-replace",
+   "source": "src",
+   "destination": "docs",
+   "manual": { "changelog": ["./CHANGELOG.md"] }
+}
