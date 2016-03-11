@@ -27,7 +27,7 @@ For the latest significant changes please see the [CHANGELOG](https://github.com
 Installation steps:
 - Install `esdoc` or `gulp-esdoc` in `devDependencies` in `package.json`.
 - Install `esdoc-plugin-extends-replace` in `devDependencies` in `package.json`.
-- Create an `esdoc.json` configuration file adding the plugin.
+- Create an `.esdocrc` or `esdoc.json` configuration file adding the plugin. 
 - Add `option` -> `replace` data listing the `extends` tag to replace with the partial path on the right.
 - Run ESdoc then profit!
 
@@ -36,14 +36,14 @@ For more information view the [ESDoc tutorial](https://esdoc.org/tutorial.html) 
 As an alternate and the preferred all inclusive installation process please see [typhonjs-core-gulptasks](https://www.npmjs.com/package/typhonjs-core-gulptasks) for a NPM package which contains several pre-defined Gulp tasks for working with JSPM / SystemJS, ESLint and ESDoc generation with all available plugins including [esdoc-plugin-jspm](https://www.npmjs.com/package/esdoc-plugin-jspm), [esdoc-plugin-extends-replace](https://www.npmjs.com/package/esdoc-plugin-extends-replace), [esdoc-importpath-plugin](https://www.npmjs.com/package/esdoc-importpath-plugin]) & [esdoc-es7-plugin](https://www.npmjs.com/package/esdoc-es7-plugin) support.
 
 `esdoc-plugin-extends-replace` can be used independently of JSPM / SystemJS, but the sample below from
-`backbone-parse-es6-todos` shows the `esdoc.json` file that uses `esdoc-plugin-extends-replace` and
+`backbone-parse-es6-todos` shows the `.esdocrc` file that uses `esdoc-plugin-extends-replace` and
 [esdoc-plugin-jspm](https://www.npmjs.com/package/esdoc-plugin-jspm).
 
 Please refer to this repo that is using this plugin to generate end to end documentation:
 https://github.com/typhonjs-demos/backbone-parse-es6-todos
 
 ```
-This is the esdoc.json configuration file for the above repo:
+This is the .esdocrc configuration file for the above repo:
 {
    "title": "backbone-parse-es6-todos",
    "source": "site",
@@ -93,17 +93,16 @@ a repository. The regex example above takes into account any semver for the JSPM
 flexibility in the code matching allowing `Backbone.<class>` or `backbone.<class>` matching in the extends
 statements. It also requires the import statement for Backbone to match `import Backbone from 'backbone';` or `import backbone from 'backbone';`
 
-If installing and working directly with `esdoc-plugin-extends-replace` the following is an example integration for `package.json`:
+If installing and working directly with `esdoc-plugin-extends-replace` the following is an example integration for `package.json` along with an NPM script to run ESDoc:
 ```
 {
   ...
 
   "devDependencies": {
-    "esdoc-plugin-extends-replace": "^0.4.1",
+    "esdoc": "^0.4.0",
+    "esdoc-plugin-extends-replace": "^0.4.0",
     "esdoc-plugin-jspm": "^0.6.0",
-    "jspm": "^0.16.25",
-    "gulp": "^3.9.0",
-    "gulp-esdoc": "^0.2.0",
+    "jspm": "^0.16.0"
   },
   
   "jspm": {
@@ -114,29 +113,17 @@ If installing and working directly with `esdoc-plugin-extends-replace` the follo
      "devDependencies": {
       ....
     }
+  },
+  
+  "scripts": {
+    "esdoc": "esdoc -c .esdocrc"
   }
 }
 ```
 
 For the example above the local source root is `src` and the ESDoc documentation is output to `docs`. The  `backbone-es6` JSPM package is automatically linked by `esdoc-plugin-jspm`.
 
-You may use any version of ESDoc, but as an example here is a simple Gulp task which invokes gulp-esdoc:
-
-```
-/**
- * Create docs from ./src using ESDoc. The docs are located in ./docs
- */
-gulp.task('docs', function()
-{
-   var esdoc = require('gulp-esdoc');
-   var path = require('path');
-
-   var esdocConfig = require('.' +path.sep +'esdoc.json');
-
-   // Launch ESDoc
-   return gulp.src(esdocConfig.source).pipe(esdoc(esdocConfig));
-});
-```
+You may use any version of ESDoc including `gulp-esdoc`, but the example above provides an NPM script entry to launch esdoc via: `npm run esdoc`. 
 
 To suggest a feature or report a bug: https://github.com/typhonjs/esdoc-plugin-extends-replace/issues
 
