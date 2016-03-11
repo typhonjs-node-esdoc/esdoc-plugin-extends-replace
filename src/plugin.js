@@ -17,14 +17,14 @@
  * `<ProjectRootDir>/jspm_packages/github/typhonjs/backbone-es6@master/src/View.js`.
  *
  * `esdoc-plugin-extends-replace` can be used independently of JSPM / SystemJS, but the sample below from
- * `backbone-parse-es6-demo` shows the `esdoc.json` file that uses `esdoc-plugin-extends-replace` and
+ * `backbone-parse-es6-demo` shows the `.esdocrc` file that uses `esdoc-plugin-extends-replace` and
  * `esdoc-plugin-jspm`.
  *
  * Please refer to this repo that is using this plugin to generate end to end documentation:
  * https://github.com/typhonjs-demos/backbone-parse-es6-todos
  *
  * ```
- * This is the esdoc.json configuration file for the above repo:
+ * This is the `.esdocrc` configuration file for the above repo:
  * {
  *    "title": "backbone-parse-es6-todos",
  *    "source": "src",
